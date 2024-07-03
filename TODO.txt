@@ -1,3 +1,7 @@
-add ninjas
-remove ninjas
-change point amount
+add correct values
+print all data in Ninja.jsx
+remove ninjas (confirmation box)
+add actual list of ninjas
+level up button
+belt up button
+ice cream status & button
