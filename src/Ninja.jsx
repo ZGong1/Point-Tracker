@@ -4,7 +4,7 @@ import './ninja.css'
 const Ninja = ( {name, value, idx} ) => {
 
     const removeNinja = item => {
-      console.log(item)
+      console.log("value: ", value)
     }
 
     return ( 
@@ -13,7 +13,7 @@ const Ninja = ( {name, value, idx} ) => {
                 <p className='ninjaName'>{name}</p>
             </div>
             <div className='ninjaData'>
-              <p>test</p> <br/>
+              <p>Ninja Bucks: {value.points}</p> <br/>
               <p>test2</p>
             </div>
         <button onClick={() => removeNinja(name)} className="removeButton">x</button>

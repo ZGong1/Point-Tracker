@@ -1,8 +1,23 @@
-const Header = ({props}) => {
-    return ( <div className="header">
-        {/* ADD CONTROLLED COMPONENT & SUBMIT BUTTON  */}
+const Header = ({setHome, setNewNinja}) => {
 
-    </div> );
+    const goNewNinja = () => {
+        setHome(false)
+        setNewNinja(true)
+    }
+
+    const goHome = () => {
+        setHome(true)
+        setNewNinja(false)
+    }
+
+    return ( 
+        <div className="header">
+            <button onClick={goHome}>Home</button>
+            <button onClick={goNewNinja}>Add Ninja</button>
+            <button>Save Backup</button>
+            <button>Restore Backup</button>
+        </div> 
+    );
 }
  
 export default Header;

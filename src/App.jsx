@@ -1,11 +1,14 @@
 import Ninja from './Ninja'
 import Header from './Header'
+import NewNinja from './NewNinja'
 import { useState, useEffect } from 'react'
 import list from './assets/test'
 
 function App() {
   
   const [ninjaList, setNinjaList] = useState(null)
+  const [home, setHome] = useState(true)
+  const [newNinja, setNewNinja] = useState(false)
 
   // initial on page load get of static data
   useEffect(() => {
@@ -20,7 +23,6 @@ function App() {
   useEffect(() => {
     if (ninjaList) {
       localStorage.setItem("ninjas", JSON.stringify(ninjaList))
-      console.log("running")
     }
   }, [ninjaList])
 
@@ -29,9 +31,13 @@ function App() {
 
   return (
     <div>
-      <Header/><br/><br/>
+      <Header setHome={setHome} setNewNinja={setNewNinja}/><br/><br/>
 
-      {ninjaList && Object.keys(ninjaList).map( (item, idx) => <Ninja key={idx} name={item} value={ninjaList[item]} idx={idx} /> )}
+      {home && ninjaList && Object.keys(ninjaList).map( (item, idx) => <Ninja key={idx} name={item} value={ninjaList[item]} idx={idx} /> )}
+
+      {newNinja && <NewNinja ninjaList={ninjaList} setNinjaList={setNinjaList}/>}
+
+
     </div>
   )
 }
