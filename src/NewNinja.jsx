@@ -17,6 +17,8 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
             "ice": true
           }
         setNinjaList(newList)
+        setName('')
+        alert("Ninja successfully added!")
     }
 
     return ( 
