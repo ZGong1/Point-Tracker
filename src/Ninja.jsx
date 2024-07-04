@@ -4,7 +4,7 @@ import './ninja.css'
 const Ninja = ( {name, value, idx} ) => {
 
     const removeNinja = item => {
-      console.log("value: ", value)
+      console.log("value: ", item)
     }
 
     return ( 

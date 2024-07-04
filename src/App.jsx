@@ -9,6 +9,12 @@ function App() {
   const [ninjaList, setNinjaList] = useState(null)
   const [home, setHome] = useState(true)
   const [newNinja, setNewNinja] = useState(false)
+  const [searchString, setSearchString] = useState('')
+  
+  var searchList =  ninjaList
+  if (ninjaList) {
+    searchList = Object.entries(ninjaList).filter( ([key, value]) => key.toUpperCase().includes(searchString.toUpperCase()) )
+  }
 
   // initial on page load get of static data
   useEffect(() => {
@@ -27,13 +33,11 @@ function App() {
   }, [ninjaList])
 
 
-
-
   return (
     <div>
-      <Header setHome={setHome} setNewNinja={setNewNinja}/><br/><br/>
+      <Header setHome={setHome} setNewNinja={setNewNinja} setSearchString={setSearchString} searchString={searchString}/><br/><br/>
 
-      {home && ninjaList && Object.keys(ninjaList).map( (item, idx) => <Ninja key={idx} name={item} value={ninjaList[item]} idx={idx} /> )}
+      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} name={item[0]} value={item[1]} idx={idx} /> )}
 
       {newNinja && <NewNinja ninjaList={ninjaList} setNinjaList={setNinjaList}/>}
 
