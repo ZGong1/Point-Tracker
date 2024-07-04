@@ -14,7 +14,7 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
         newList[value] = {
             "points": 0,
             "llu": "MMYY",
-            "ice": true
+            "ice": false
           }
         setNinjaList(newList)
         setName('')
