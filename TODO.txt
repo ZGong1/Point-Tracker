@@ -1,13 +1,13 @@
 add correct values
-print all data in Ninja.jsx
 remove ninjas (confirmation box)
 add actual list of ninjas
 level up button
 belt up button
-ice cream status & button
+ice cream button
 add daniel's image
 bug daniel about making more icons (random number in local storage)
 monthly ice cream reset
-//add search bar to header
 
-new computer test
+DONE:
+add search bar to header
+print all data in Ninja.jsx
