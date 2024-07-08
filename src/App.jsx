@@ -26,6 +26,7 @@ function App() {
     }
   }, []);
   
+  // update local storage if new ninja is added
   useEffect(() => {
     if (ninjaList) {
       localStorage.setItem("ninjas", JSON.stringify(ninjaList))
