@@ -9,3 +9,5 @@ add daniel's image
 bug daniel about making more icons (random number in local storage)
 monthly ice cream reset
 //add search bar to header
+
+new computer test
