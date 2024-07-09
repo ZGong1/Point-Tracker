@@ -38,7 +38,7 @@ function App() {
     <div>
       <Header setHome={setHome} setNewNinja={setNewNinja} setSearchString={setSearchString} searchString={searchString}/><br/><br/>
 
-      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} name={item[0]} value={item[1]} idx={idx} /> )}
+      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} name={item[0]} value={item[1]} idx={idx} imgNum={Math.floor(Math.random() * 2) }/> )}
 
       {newNinja && <NewNinja ninjaList={ninjaList} setNinjaList={setNinjaList}/>}
 

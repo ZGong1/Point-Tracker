@@ -9,13 +9,15 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
     }
 
     const onClick = value => {
+        const date = new Date();
+        const mmdd = date.toISOString().slice(5, 10).replace('-', '/');
         console.log("value: ", value)
         var newList = {...ninjaList}
         newList[value] = {
             "points": 0,
-            "llu": "MMYY",
+            "llu": mmdd,
             "ice": false
-          }
+        }
         setNinjaList(newList)
         setName('')
         alert("Ninja successfully added!")

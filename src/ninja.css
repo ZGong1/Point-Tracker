@@ -22,10 +22,10 @@
 
 .ninjaData {
     grid-column-start: 2;
-    border-left: 2px solid red;
+
 
     margin: 0px;
-    padding: 10px;
+    padding-top: 10px;
 
     display: flex;
     align-items: center;
@@ -33,7 +33,11 @@
 }
 
 .innerLeft {
-    margin: 10px;
+    border-right: 2px solid red;
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
 }
 
 .header {
@@ -50,4 +54,16 @@
     margin: 0px;
     margin-bottom: 10px;
     font-size: 20px;
+}
+
+img {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    object-position: center bottom;
+}
+
+.ninjaName {
+    margin: 8px 0px;
 }

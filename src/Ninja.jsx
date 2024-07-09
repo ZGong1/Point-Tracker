@@ -1,19 +1,23 @@
 import './ninja.css'
+import imageList from './image'
 
 
-const Ninja = ( {name, value, idx} ) => {
+const Ninja = ( {name, value, idx, imgNum} ) => {
 
     const removeNinja = item => {
       console.log("value: ", value)
+      console.log(imageList)
     }
 
     return ( 
        <div className="outerNinja">
             <div className="innerLeft">
+                <img className='image' src={imageList[imgNum]}/>
                 <p className='ninjaName'>{name}</p>
             </div>
             <div className='ninjaData'>
-              <p>Ninja Bucks: {value.points}</p>
+              Ninja Bucks: {value.points} <br/><br/>
+              Last Level Up: {value.llu}<br/>
 
               {value.ice && <p className='emoji'>🍦</p>}
               {!value.ice && <p className='emoji'>❌</p>}
