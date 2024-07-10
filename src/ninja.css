@@ -7,6 +7,7 @@
     height: 30%;
     width: 30%;
     position: relative;
+    background: lightgray;
 }
 
 .editButton {
@@ -59,6 +60,23 @@ img {
 input[type='number']{
     width: 40px;
 } 
+
+.red {
+    background-color: red;
+}
+
+.white {
+    background-color: white;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
 
 
 

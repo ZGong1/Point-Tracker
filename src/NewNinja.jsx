@@ -24,7 +24,8 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
             "points": bucks,
             "llu": "N/A",
             "ice": true,
-            "imgNum": Math.floor(Math.random() * 2)
+            "imgNum": Math.floor(Math.random() * 2),
+            "belt": "white"
         }
         setNinjaList(newList)
         setName('')

@@ -81,7 +81,7 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
   return ( 
       <div className="outerNinja">
 
-          <div className="innerLeft">
+          <div className={`innerLeft ${value.belt}`}>
               <img className='image' src={imageList[imgNum]}/>
               <p className='ninjaName'>{name}</p>
           </div>

@@ -2,14 +2,17 @@ add actual list of ninjas
 nice state based notification (animated?!)
 restore button https://www.filestack.com/fileschool/react/react-file-upload/
 delete button appears when you click edit
-password to edit(?)
+localStorage password manager for lock button?
+password to edit(?) // global edit button with lock key and prompt password // lock unlock button that reveals 4 buttons in ninja component & save backup & restore backup
 auto daily backup api flask requests(?)
 make new ninja page look better
 make belt up change 
-innerLeft color = belt
 check if ninja already exists
+leveling up changes belt color
+belt color to edit (belt down button in edit mode?)
 
 DONE:
+innerLeft color = belt
 backup button
 make edit button look like edit button
 level up button
