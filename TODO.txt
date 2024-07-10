@@ -1,6 +1,13 @@
 add actual list of ninjas
 nice state based notification (animated?!)
 restore button https://www.filestack.com/fileschool/react/react-file-upload/
+delete button appears when you click edit
+password to edit(?)
+auto daily backup api flask requests(?)
+make new ninja page look better
+make belt up change 
+innerLeft color = belt
+check if ninja already exists
 
 DONE:
 backup button
