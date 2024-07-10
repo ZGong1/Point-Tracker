@@ -16,7 +16,7 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
       setEdit(false)
       const toEdit = {...ninjaList}
       const newPoints = editValue
-      toEdit[name] = {...toEdit[name], points: newPoints}
+      toEdit[name] = {...toEdit[name], points: Number(newPoints)}
       setNinjaList(toEdit)
       setEditValue(null)
     } else {
@@ -54,7 +54,7 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
     date = `${mm}/${dd}/${yyyy}`;
 
     const toEdit = {...ninjaList}
-    const newPoints = toEdit[name].points + 5
+    const newPoints = Number(toEdit[name].points) + 5
     toEdit[name] = {...toEdit[name], points: newPoints, llu: date}
 
     setNinjaList(toEdit)
@@ -70,7 +70,7 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
     date = `${mm}/${dd}/${yyyy}`;
 
     const toEdit = {...ninjaList}
-    const newPoints = toEdit[name].points + 15
+    const newPoints = Number(toEdit[name].points) + 15
     toEdit[name] = {...toEdit[name], points: newPoints, llu: date}
 
     setNinjaList(toEdit)
