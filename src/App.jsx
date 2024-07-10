@@ -33,13 +33,10 @@ function App() {
       if (lir !== MMYY()) {
         var toEdit = {...JSON.parse(storedNinjas)}
         Object.keys(toEdit).forEach(item => toEdit[item].ice = true)
-        console.log("toEdit: ", toEdit)
         setNinjaList(toEdit)
         localStorage.setItem("ninjas", JSON.stringify(toEdit))
         localStorage.setItem("lir", MMYY())
         alert("Ice cream has been reset for the month")
-      } else {
-        console.log("no reset needed")
       }
     } else {
       localStorage.setItem("lir", MMYY())

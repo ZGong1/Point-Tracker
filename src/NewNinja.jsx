@@ -5,14 +5,17 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
     const [name, setName] = useState('')
     const [bucks, setBucks] = useState(0)
 
+    // changes name state
     const onChangeName = event => {
         setName(event.target.value)
     }
 
+    // changes bucks state
     const onChangeBucks = event => {
         setBucks(event.target.value)
     }
 
+    // Creates new ninja
     const onClick = value => {
         const date = new Date();
         const mmyyyy = date.toISOString().slice(5, 7) + '/' + date.toISOString().slice(0, 4);

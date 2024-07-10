@@ -1,12 +1,13 @@
 add actual list of ninjas
-level up button
-belt up button
 nice state based notification (animated?!)
-get rid of remove ninja button? (debug button for now)
-restore button
-backup button
+restore button https://www.filestack.com/fileschool/react/react-file-upload/
 
 DONE:
+backup button
+make edit button look like edit button
+level up button
+belt up button
+turn remove ninja button into edit button (replace text with entrance box)
 make llu MM/YYYY
 reset for the ice cream button
 add correct values
