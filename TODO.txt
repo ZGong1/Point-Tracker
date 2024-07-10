@@ -6,6 +6,7 @@ belt up button
 ice cream button
 monthly ice cream reset
 make images random on creation, and not page load
+reset for the ice cream button
 
 DONE:
 add search bar to header

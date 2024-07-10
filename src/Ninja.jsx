@@ -2,11 +2,24 @@ import './ninja.css'
 import imageList from './image'
 
 
-const Ninja = ( {name, value, idx, imgNum} ) => {
+const Ninja = ( {ninjaList, setNinjaList, name, value, idx, imgNum} ) => {
 
-    const removeNinja = item => {
+    const removeNinja = () => {
       console.log("value: ", value)
       console.log(imageList)
+    }
+
+    const iceCream = () => {
+      // console.log("name: ", name)
+      // console.log("ninjaList: ", ninjaList[name])
+
+      if (ninjaList[name].ice) {
+        alert("Ice cream redeemed!")
+        const toEdit = {...ninjaList}
+        toEdit[name] = {...toEdit[name], ice: false}
+        console.log("toEdit[name]: ", toEdit[name])
+        setNinjaList(toEdit)
+      }
     }
 
     return ( 
@@ -24,7 +37,7 @@ const Ninja = ( {name, value, idx, imgNum} ) => {
               <div>
                 <button>Level Up</button>
                 <button>Belt Up</button>
-                <button>Ice Cream</button>
+                <button onClick={() => iceCream(name)}>Ice Cream</button>
               </div>
             </div>
         <button onClick={() => removeNinja(name)} className="removeButton">x</button>
