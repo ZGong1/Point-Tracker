@@ -2,7 +2,7 @@ import './ninja.css'
 import imageList from './image'
 
 
-const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
+const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
 
   var imgNum = value.imgNum 
 
@@ -12,8 +12,6 @@ const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
     }
 
     const iceCream = () => {
-      // console.log("name: ", name)
-      // console.log("ninjaList: ", ninjaList[name])
 
       if (ninjaList[name].ice && ninjaList[name].points >= 10) {
         alert("Ice cream redeemed!")
@@ -25,6 +23,22 @@ const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
       } else {
         alert("You already got ice cream this month or don't have enough ninja bucks.")
       }
+
+    }
+
+    const levelUp = () => {
+      var date = new Date();
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+      const yyyy = date.getFullYear();
+      date = `${mm}/${dd}/${yyyy}`;
+
+      const toEdit = {...ninjaList}
+      const newPoints = toEdit[name].points + 5
+      toEdit[name] = {...toEdit[name], points: newPoints, llu: date}
+
+      setNinjaList(toEdit)
+      alert(`${name} has leveled up!`)
     }
 
     return ( 
@@ -34,13 +48,13 @@ const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
                 <p className='ninjaName'>{name}</p>
             </div>
             <div className='ninjaData'>
-              Ninja Bucks: {value.points} <br/><br/>
+              <p>Ninja Bucks: {value.points}</p>
               Last Level Up: {value.llu}<br/>
 
               {value.ice && <p className='emoji'>🍦</p>}
               {!value.ice && <p className='emoji'>❌</p>}
               <div>
-                <button>Level Up</button>
+                <button onClick={levelUp}>Level Up</button>
                 <button>Belt Up</button>
                 <button onClick={() => iceCream(name)}>Ice Cream</button>
               </div>

@@ -28,7 +28,6 @@ function App() {
     }
 
     // load (l)ast (i)cecream (r)eset
-    // if doesn't exist
     const lir = localStorage.getItem("lir")
     if (lir) {
       if (lir !== MMYY()) {
@@ -38,7 +37,7 @@ function App() {
         setNinjaList(toEdit)
         localStorage.setItem("ninjas", JSON.stringify(toEdit))
         localStorage.setItem("lir", MMYY())
-        alert("ice cream has been reset for the month")
+        alert("Ice cream has been reset for the month")
       } else {
         console.log("no reset needed")
       }
@@ -59,7 +58,7 @@ function App() {
     <div>
       <Header setHome={setHome} setNewNinja={setNewNinja} setSearchString={setSearchString} searchString={searchString}/><br/><br/>
 
-      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} ninjaList={ninjaList} setNinjaList={setNinjaList} name={item[0]} value={item[1]} idx={idx} /> )}
+      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} ninjaList={ninjaList} setNinjaList={setNinjaList} name={item[0]} value={item[1]} /> )}
 
       {newNinja && <NewNinja ninjaList={ninjaList} setNinjaList={setNinjaList}/>}
 

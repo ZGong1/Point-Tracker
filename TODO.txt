@@ -3,6 +3,8 @@ level up button
 belt up button
 nice state based notification (animated?!)
 get rid of remove ninja button? (debug button for now)
+restore button
+backup button
 
 DONE:
 make llu MM/YYYY
