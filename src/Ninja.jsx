@@ -15,12 +15,15 @@ const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
       // console.log("name: ", name)
       // console.log("ninjaList: ", ninjaList[name])
 
-      if (ninjaList[name].ice) {
+      if (ninjaList[name].ice && ninjaList[name].points >= 10) {
         alert("Ice cream redeemed!")
         const toEdit = {...ninjaList}
-        toEdit[name] = {...toEdit[name], ice: false}
+        const newPoints = toEdit[name].points - 10
+        toEdit[name] = {...toEdit[name], ice: false, points: newPoints}
         console.log("toEdit[name]: ", toEdit[name])
         setNinjaList(toEdit)
+      } else {
+        alert("You already got ice cream this month or don't have enough ninja bucks.")
       }
     }
 

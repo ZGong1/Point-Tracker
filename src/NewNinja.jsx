@@ -10,11 +10,12 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
 
     const onClick = value => {
         const date = new Date();
-        const mmdd = date.toISOString().slice(5, 10).replace('-', '/');
+        const mmyyyy = date.toISOString().slice(5, 7) + '/' + date.toISOString().slice(0, 4);
+        console.log(mmyyyy)
         var newList = {...ninjaList}
         newList[value] = {
             "points": 0,
-            "llu": mmdd,
+            "llu": mmyyyy,
             "ice": true,
             "imgNum": Math.floor(Math.random() * 2)
         }

@@ -1,13 +1,14 @@
-add correct values
-remove ninjas (confirmation box)
 add actual list of ninjas
 level up button
 belt up button
-ice cream button (take away ninja bucks)
-reset for the ice cream button
-make llu MM/DD/YYYY
+nice state based notification (animated?!)
+get rid of remove ninja button? (debug button for now)
 
 DONE:
+make llu MM/YYYY
+reset for the ice cream button
+add correct values
+ice cream button
 monthly ice cream reset
 make images random on creation, and not page load
 add search bar to header
