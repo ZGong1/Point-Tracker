@@ -15,7 +15,8 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
         newList[value] = {
             "points": 0,
             "llu": mmdd,
-            "ice": true
+            "ice": true,
+            "imgNum": Math.floor(Math.random() * 2)
         }
         setNinjaList(newList)
         setName('')

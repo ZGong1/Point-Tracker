@@ -3,12 +3,13 @@ remove ninjas (confirmation box)
 add actual list of ninjas
 level up button
 belt up button
-ice cream button
-monthly ice cream reset
-make images random on creation, and not page load
+ice cream button (take away ninja bucks)
 reset for the ice cream button
+make llu MM/DD/YYYY
 
 DONE:
+monthly ice cream reset
+make images random on creation, and not page load
 add search bar to header
 print all data in Ninja.jsx
 add daniel's image

@@ -2,7 +2,9 @@ import './ninja.css'
 import imageList from './image'
 
 
-const Ninja = ( {ninjaList, setNinjaList, name, value, idx, imgNum} ) => {
+const Ninja = ( {ninjaList, setNinjaList, name, value, idx} ) => {
+
+  var imgNum = value.imgNum 
 
     const removeNinja = () => {
       console.log("value: ", value)
