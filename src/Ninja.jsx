@@ -1,5 +1,5 @@
 import './ninja.css'
-import imageList from './image'
+import imageList from './utils/image'
 import { useState } from 'react'
 
 
@@ -77,6 +77,14 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
     alert(`${name} has belted up!`)
   }
 
+  // deletes ninja
+  const deleteNinja = () => {
+    var toEdit = {...ninjaList}
+    delete toEdit[name]
+    setNinjaList(toEdit)
+    alert(`${name} has been deleted.`)
+  }
+
 
   return ( 
       <div className="outerNinja">
@@ -98,14 +106,16 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
             {!value.ice && <p className='emoji'>❌</p>}
 
             <div>
-              <button onClick={levelUp}>Level Up</button>
-              <button onClick={beltUp}>Belt Up</button>
-              <button onClick={iceCream}>Ice Cream</button>
+              <button onClick={levelUp} className='ninja-button'>Level Up</button>
+              <button onClick={beltUp} className='ninja-button'>Belt Up</button>
+              <button onClick={iceCream} className='ninja-button'>Ice Cream</button>
             </div>
 
           </div>
-
-      <button onClick={editNinja} className="editButton">✏️</button>
+      <div>
+        <button onClick={editNinja} className="editButton">✏️</button>
+        <button onClick={deleteNinja} className="editButton">❌</button>
+      </div>
 
       </div>
   );

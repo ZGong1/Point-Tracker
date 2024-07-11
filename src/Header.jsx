@@ -34,11 +34,17 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString } ) => {
 
     return ( 
         <div className="header">
-            <button onClick={goHome}>Home</button>
-            <button onClick={goNewNinja}>Add Ninja</button>
-            <button onClick={download}>Save Backup</button>
-            <button>Restore Backup</button>
-            Search: <input value={searchString} onChange={handleSearch}></input>
+
+            <div className="left-buttons">
+                <button onClick={goHome}>Home</button>
+                <button onClick={goNewNinja}>Add Ninja</button>
+                <button onClick={download}>Save Backup</button>
+                <button>Restore Backup</button>
+                Search: <input value={searchString} onChange={handleSearch}></input>
+            </div>
+            <div className="right-buttons">
+                <button>🔒</button>
+            </div>
         </div> 
     );
 }

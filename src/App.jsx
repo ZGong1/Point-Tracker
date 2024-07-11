@@ -2,8 +2,7 @@ import Ninja from './Ninja'
 import Header from './Header'
 import NewNinja from './NewNinja'
 import { useState, useEffect } from 'react'
-import MMYY from './util'
-import list from './assets/test'
+import MMYY from './utils/util'
 
 function App() {
   
