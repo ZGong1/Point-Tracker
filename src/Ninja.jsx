@@ -1,6 +1,7 @@
 import './ninja.css'
 import imageList from './utils/image'
 import { useState } from 'react'
+import nextBelt from './utils/beltUp'
 
 
 const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
@@ -71,7 +72,8 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
 
     const toEdit = {...ninjaList}
     const newPoints = Number(toEdit[name].points) + 15
-    toEdit[name] = {...toEdit[name], points: newPoints, llu: date}
+    const newBelt = nextBelt(ninjaList[name].belt)
+    toEdit[name] = {...toEdit[name], points: newPoints, llu: date, belt: newBelt}
 
     setNinjaList(toEdit)
     alert(`${name} has belted up!`)

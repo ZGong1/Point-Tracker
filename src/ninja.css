@@ -65,23 +65,6 @@ input[type='number']{
     float: right;
 }
 
-.red {
-    background-color: red;
-}
-
-.white {
-    background-color: white;
-}
-
-.yellow {
-    background: yellow;
-}
-
-.black {
-    background-color: black;
-    color: white;
-}
-
 .left-buttons {
     display: flex;
     gap: 10px; /* Adds space between left-aligned buttons */
@@ -91,6 +74,54 @@ input[type='number']{
 display: flex;
 gap: 10px; /* Adds space between right-aligned buttons */
 }
+
+
+
+
+
+
+
+
+.white {
+    background-color: white;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.orange {
+    background: orange;
+}
+
+.purple {
+    background: purple;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
+.brown {
+    background: #6E260E;
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+
 
 
 

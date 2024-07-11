@@ -10,6 +10,7 @@ function App() {
   const [home, setHome] = useState(true)
   const [newNinja, setNewNinja] = useState(false)
   const [searchString, setSearchString] = useState('')
+  const [authorized, setAuthorized] = useState(false)
   
   var searchList =  ninjaList
   if (ninjaList) {
@@ -52,7 +53,13 @@ function App() {
 
   return (
     <div>
-      <Header setHome={setHome} setNewNinja={setNewNinja} setSearchString={setSearchString} searchString={searchString}/><br/><br/>
+      <Header 
+        setHome={setHome} 
+        setNewNinja={setNewNinja} 
+        setSearchString={setSearchString} 
+        searchString={searchString} 
+        authorized={authorized} 
+        setAuthorized={setAuthorized}/><br/><br/>
 
       {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} ninjaList={ninjaList} setNinjaList={setNinjaList} name={item[0]} value={item[1]} /> )}
 

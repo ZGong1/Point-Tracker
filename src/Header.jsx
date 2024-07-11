@@ -1,4 +1,4 @@
-const Header = ( { setHome, setNewNinja, setSearchString, searchString } ) => {
+const Header = ( { setHome, setNewNinja, setSearchString, searchString, authorized, setAuthorized } ) => {
 
     const goNewNinja = () => {
         setHome(false)
@@ -12,6 +12,21 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString } ) => {
 
     const handleSearch = e => {
         setSearchString(e.target.value)
+    }
+
+    const lockButton = () => {
+        if (authorized) {
+            // deauthorize
+            setAuthorized(!authorized)
+        } else {
+            //authorize
+            var pwdInput = prompt("Please enter the password")
+            if (pwdInput === "Sensei24") {
+                setAuthorized(!authorized)
+            } else {
+                alert("WRONG PASSWORD")
+            }
+        }
     }
 
     // stack overflow to download file
@@ -43,7 +58,8 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString } ) => {
                 Search: <input value={searchString} onChange={handleSearch}></input>
             </div>
             <div className="right-buttons">
-                <button>🔒</button>
+                {authorized && <button onClick={lockButton}>🔓</button>}
+                {!authorized && <button onClick={lockButton}>🔒</button>}
             </div>
         </div> 
     );

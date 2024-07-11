@@ -12,11 +12,12 @@ make new ninja page look better
 make belt up change 
 check if ninja already exists on creation
 leveling up changes belt color
-belt color to edit (belt down button in edit mode?)
 sort alphabetically
 log in local storage
+align top and bottom text in header
 
-
+*********************
+belt color to edit (belt down button in edit mode?)
 
 
 
