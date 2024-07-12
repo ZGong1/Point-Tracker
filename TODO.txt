@@ -12,12 +12,10 @@ make new ninja page look better
 make belt up change 
 check if ninja already exists on creation
 leveling up changes belt color
-sort alphabetically
+header doesn't stick
 log in local storage
-align top and bottom text in header
 
 *********************
-belt color to edit (belt down button in edit mode?)
 
 
 
@@ -48,6 +46,10 @@ belt color to edit (belt down button in edit mode?)
 
 
 DONE:
+sort alphabetically
+belt color to edit (belt down button in edit mode?)
+align top and bottom text in header
+buttons show even if not authorized?: level up, belt up, *belt down, ice cream, *edit
 innerLeft color = belt
 backup button
 make edit button look like edit button

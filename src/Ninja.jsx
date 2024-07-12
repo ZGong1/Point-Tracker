@@ -1,18 +1,26 @@
 import './ninja.css'
 import imageList from './utils/image'
 import { useState } from 'react'
-import nextBelt from './utils/beltUp'
+import {nextBelt, prevBelt} from './utils/beltUp'
 
 
-const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
+const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
 
   var imgNum = value.imgNum 
 
   const [edit, setEdit] = useState(false)
   const [editValue, setEditValue] = useState(null)
 
+
+  // changes to edit box event
+  const onChange = event => {
+    setEditValue(event.target.value)
+  }
+
   // allows toggling editting point value
   const editNinja = () => {
+    if (!authorized) return alert("Not authorized")
+
     if (edit) {
       setEdit(false)
       const toEdit = {...ninjaList}
@@ -26,13 +34,11 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
     }
   }
 
-  // changes to edit box event
-  const onChange = event => {
-    setEditValue(event.target.value)
-  }
+
 
   // ice cream button
   const iceCream = () => {
+    if (!authorized) return alert("Not authorized")
 
     if (ninjaList[name].ice && ninjaList[name].points >= 10) {
       alert("Ice cream redeemed!")
@@ -48,6 +54,8 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
 
   // level up button
   const levelUp = () => {
+    if (!authorized) return alert("Not authorized")
+
     var date = new Date();
     const mm = String(date.getMonth() + 1).padStart(2, '0');
     const dd = String(date.getDate()).padStart(2, '0');
@@ -64,6 +72,8 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
 
   // belt up button
   const beltUp = () => {
+    if (!authorized) return alert("Not authorized")
+
     var date = new Date();
     const mm = String(date.getMonth() + 1).padStart(2, '0');
     const dd = String(date.getDate()).padStart(2, '0');
@@ -77,6 +87,15 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
 
     setNinjaList(toEdit)
     alert(`${name} has belted up!`)
+  }
+
+  // belt down button
+  const beltDown = () => {
+    const toEdit = {...ninjaList}
+    const newBelt = prevBelt(ninjaList[name].belt)
+    toEdit[name] = {...toEdit[name], belt: newBelt}
+    setNinjaList(toEdit)
+    alert(`${name} has belted down!`)
   }
 
   // deletes ninja
@@ -108,15 +127,16 @@ const Ninja = ( {ninjaList, setNinjaList, name, value} ) => {
             {!value.ice && <p className='emoji'>❌</p>}
 
             <div>
-              <button onClick={levelUp} className='ninja-button'>Level Up</button>
-              <button onClick={beltUp} className='ninja-button'>Belt Up</button>
-              <button onClick={iceCream} className='ninja-button'>Ice Cream</button>
+              <button onClick={levelUp} className='ninja-button' >Level Up</button>
+              <button onClick={beltUp} className='ninja-button' >Belt Up</button>
+              {authorized && <button onClick={beltDown} className='ninja-button' >Belt Down</button>}
+              <button onClick={iceCream} className='ninja-button' >Ice Cream</button>
             </div>
 
           </div>
       <div>
         <button onClick={editNinja} className="editButton">✏️</button>
-        <button onClick={deleteNinja} className="editButton">❌</button>
+        { authorized && <button onClick={deleteNinja} className="editButton">❌</button> }
       </div>
 
       </div>

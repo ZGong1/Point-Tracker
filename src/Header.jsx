@@ -55,7 +55,7 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString, authoriz
                 <button onClick={goNewNinja}>Add Ninja</button>
                 <button onClick={download}>Save Backup</button>
                 <button>Restore Backup</button>
-                Search: <input value={searchString} onChange={handleSearch}></input>
+                <span className="vertical">Search:</span> <input value={searchString} onChange={handleSearch}></input>
             </div>
             <div className="right-buttons">
                 {authorized && <button onClick={lockButton}>🔓</button>}

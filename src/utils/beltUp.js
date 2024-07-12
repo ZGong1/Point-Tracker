@@ -10,4 +10,16 @@ const nextBelt = currentBelt => {
     return "black"
 }
 
-export default nextBelt
+const prevBelt = currentBelt => {
+    if (currentBelt === "black") return "red"
+    if (currentBelt === "red") return "brown"
+    if (currentBelt === "brown") return "green"
+    if (currentBelt === "green") return "blue"
+    if (currentBelt === "blue") return "purple"
+    if (currentBelt === "purple") return "orange"
+    if (currentBelt === "orange") return "yellow"
+    if (currentBelt === "yellow") return "white"
+    return "white"
+}
+
+export {nextBelt, prevBelt}

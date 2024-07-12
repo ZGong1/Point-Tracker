@@ -3,6 +3,7 @@ import Header from './Header'
 import NewNinja from './NewNinja'
 import { useState, useEffect } from 'react'
 import MMYY from './utils/util'
+import sortObjectAlphabetically from './utils/sortObject'
 
 function App() {
   
@@ -12,17 +13,20 @@ function App() {
   const [searchString, setSearchString] = useState('')
   const [authorized, setAuthorized] = useState(false)
   
+  // searches by search string
   var searchList =  ninjaList
+  const toFilter = {...ninjaList}
   if (ninjaList) {
-    searchList = Object.entries(ninjaList).filter( ([key, value]) => key.toUpperCase().includes(searchString.toUpperCase()) )
+    searchList = Object.entries(sortObjectAlphabetically(toFilter)).filter( ([key, value]) => key.toUpperCase().includes(searchString.toUpperCase()) )
   }
 
   // initial on page load get of static data
   useEffect(() => {
     // load ninjaList
-    const storedNinjas = localStorage.getItem("ninjas");
+    var storedNinjas = localStorage.getItem("ninjas");
     if (storedNinjas) {
-      setNinjaList(JSON.parse(storedNinjas));
+      storedNinjas = sortObjectAlphabetically(JSON.parse(storedNinjas))
+      setNinjaList(storedNinjas);
     } else {
       localStorage.setItem("ninjas", JSON.stringify(ninjaList));
     }
@@ -46,7 +50,8 @@ function App() {
   // update local storage if new ninja is added
   useEffect(() => {
     if (ninjaList) {
-      localStorage.setItem("ninjas", JSON.stringify(ninjaList))
+      const sorted = sortObjectAlphabetically(ninjaList)
+      localStorage.setItem("ninjas", JSON.stringify(sorted))
     }
   }, [ninjaList])
 
@@ -61,7 +66,7 @@ function App() {
         authorized={authorized} 
         setAuthorized={setAuthorized}/><br/><br/>
 
-      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} ninjaList={ninjaList} setNinjaList={setNinjaList} name={item[0]} value={item[1]} /> )}
+      {home && searchList && searchList.map( (item, idx) => <Ninja key={idx} ninjaList={ninjaList} setNinjaList={setNinjaList} name={item[0]} value={item[1]} authorized={authorized}/> )}
 
       {newNinja && <NewNinja ninjaList={ninjaList} setNinjaList={setNinjaList}/>}
 
