@@ -1,15 +1,25 @@
-const Header = ( { setHome, setNewNinja, setSearchString, searchString, authorized, setAuthorized } ) => {
+const Header = ( { setHome, setNewNinja, setIsLog, setSearchString, searchString, authorized, setAuthorized } ) => {
 
+    // navigation
     const goNewNinja = () => {
         setHome(false)
         setNewNinja(true)
+        setIsLog(false)
     }
 
     const goHome = () => {
         setHome(true)
         setNewNinja(false)
+        setIsLog(false)
     }
 
+    const goLog = () => {
+        setHome(false)
+        setNewNinja(false)
+        setIsLog(true)
+    }
+
+    // other buttons
     const handleSearch = e => {
         setSearchString(e.target.value)
     }
@@ -28,6 +38,7 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString, authoriz
             }
         }
     }
+
 
     // stack overflow to download file
     const download = () => {
@@ -53,6 +64,7 @@ const Header = ( { setHome, setNewNinja, setSearchString, searchString, authoriz
             <div className="left-buttons">
                 <button onClick={goHome}>Home</button>
                 <button onClick={goNewNinja}>Add Ninja</button>
+                <button onClick={goLog}>Log</button>
                 <button onClick={download}>Save Backup</button>
                 <button>Restore Backup</button>
                 <span className="vertical">Search:</span> <input value={searchString} onChange={handleSearch}></input>

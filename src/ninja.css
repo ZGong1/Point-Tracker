@@ -150,7 +150,7 @@ body {
 .header {
     align-items: center;
     display: grid;
-    position: absolute;
+    position: fixed;
     grid-template-columns: 8fr 2fr;
     top: 0;
     left: 0;
@@ -161,10 +161,8 @@ body {
     background-color: var(--purple-primary);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
-
     transform: scale(1.2);
     transform-origin: top left;
-
 }
 
 .header button {

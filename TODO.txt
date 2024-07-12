@@ -1,19 +1,14 @@
 add actual list of ninjas
+
+authorized check to addninja, and load backup
 nice state based notification (animated?!)
 restore button https://www.filestack.com/fileschool/react/react-file-upload/
-delete button appears when you click edit
-
 localStorage password manager for lock button?
-password to edit(?) // global edit button with lock key and prompt password // lock unlock button that reveals 4 buttons in ninja component & save backup & restore backup
-https://emojiterra.com/locks/
-
 auto daily backup api flask requests(?)
 make new ninja page look better
-make belt up change 
+make log page look better
+finish implementing logger on all buttons (only edit works right now)
 check if ninja already exists on creation
-leveling up changes belt color
-header doesn't stick
-log in local storage
 
 *********************
 
@@ -46,6 +41,11 @@ log in local storage
 
 
 DONE:
+log in local storage
+leveling up changes belt color
+delete button appears when you click edit
+header doesn't stick
+password to edit(?) // global edit button with lock key and prompt password // lock unlock button that reveals 4 buttons in ninja component & save backup & restore backup
 sort alphabetically
 belt color to edit (belt down button in edit mode?)
 align top and bottom text in header

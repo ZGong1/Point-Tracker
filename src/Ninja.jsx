@@ -2,6 +2,7 @@ import './ninja.css'
 import imageList from './utils/image'
 import { useState } from 'react'
 import {nextBelt, prevBelt} from './utils/beltUp'
+import logAction from './utils/logger'
 
 
 const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
@@ -25,16 +26,16 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
       setEdit(false)
       const toEdit = {...ninjaList}
       const newPoints = editValue
+      const oldValue = toEdit[name].points
       toEdit[name] = {...toEdit[name], points: Number(newPoints)}
       setNinjaList(toEdit)
       setEditValue(null)
+      logAction(`${name} was changed to have ${newPoints} from ${oldValue}`)
     } else {
       setEdit(true)
       setEditValue(value.points)
     }
   }
-
-
 
   // ice cream button
   const iceCream = () => {
