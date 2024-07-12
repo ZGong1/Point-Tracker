@@ -17,6 +17,9 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
 
     // Creates new ninja
     const onClick = value => {
+        // checks if ninja already exists first
+        if (ninjaList[value]) return alert(`${value} is already a ninja!`)
+
         const date = new Date();
         const mmyyyy = date.toISOString().slice(5, 7) + '/' + date.toISOString().slice(0, 4);
         var newList = {...ninjaList}

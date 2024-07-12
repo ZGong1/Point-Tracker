@@ -1,16 +1,16 @@
 add actual list of ninjas
 
+clear log button
 authorized check to addninja, and load backup
-nice state based notification (animated?!)
 restore button https://www.filestack.com/fileschool/react/react-file-upload/
 localStorage password manager for lock button?
 auto daily backup api flask requests(?)
 make new ninja page look better
 make log page look better
 finish implementing logger on all buttons (only edit works right now)
-check if ninja already exists on creation
 
 *********************
+nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
 
 
 
@@ -41,6 +41,7 @@ check if ninja already exists on creation
 
 
 DONE:
+check if ninja already exists on creation
 log in local storage
 leveling up changes belt color
 delete button appears when you click edit
