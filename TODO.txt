@@ -11,6 +11,7 @@ add log to backup file
 better time format for log
 better password input screen
 password to edit
+always show belt down?
 
 *********************
 replace all alert() with setNotification()
