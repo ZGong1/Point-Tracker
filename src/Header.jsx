@@ -1,24 +1,6 @@
-const Header = ( { setHome, setNewNinja, setIsLog, setSearchString, searchString, authorized, setAuthorized } ) => {
+import { Link } from 'react-router-dom';
 
-    // navigation
-    const goNewNinja = () => {
-        setHome(false)
-        setNewNinja(true)
-        setIsLog(false)
-    }
-
-    const goHome = () => {
-        setHome(true)
-        setNewNinja(false)
-        setIsLog(false)
-    }
-
-    const goLog = () => {
-        setHome(false)
-        setNewNinja(false)
-        setIsLog(true)
-    }
-
+const Header = ( { setSearchString, searchString, authorized, setAuthorized } ) => {
     // other buttons
     const handleSearch = e => {
         setSearchString(e.target.value)
@@ -39,7 +21,6 @@ const Header = ( { setHome, setNewNinja, setIsLog, setSearchString, searchString
         }
     }
 
-
     // stack overflow to download file
     const download = () => {
         // create data to save
@@ -57,14 +38,18 @@ const Header = ( { setHome, setNewNinja, setIsLog, setSearchString, searchString
         document.body.removeChild(element);
     }
 
-
     return ( 
         <div className="header">
-
             <div className="left-buttons">
-                <button onClick={goHome}>Home</button>
-                <button onClick={goNewNinja}>Add Ninja</button>
-                <button onClick={goLog}>Log</button>
+                <Link to="/">
+                    <button>Home</button>
+                </Link>
+                <Link to="/new">
+                    <button>Add Ninja</button>
+                </Link>
+                <Link to="/log">
+                    <button>Log</button>
+                </Link>
                 <button onClick={download}>Save Backup</button>
                 <button>Restore Backup</button>
                 <span className="vertical">Search:</span> <input value={searchString} onChange={handleSearch}></input>
