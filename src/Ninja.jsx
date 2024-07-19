@@ -143,7 +143,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
           </div>
       <div>
         <button onClick={editNinja} className="editButton">✏️</button>
-        { authorized && <button onClick={deleteNinja} className="editButton">❌</button> }
+        { authorized && edit && <button onClick={deleteNinja} className="editButton">❌</button> }
       </div>
 
       </div>

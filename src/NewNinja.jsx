@@ -1,7 +1,8 @@
 import { useState } from "react";
 import logAction from "./utils/logger";
+import setNotification from "./utils/notification";
 
-const NewNinja = ({ninjaList, setNinjaList}) => {
+const NewNinja = ( { ninjaList, setNinjaList, setAlert } ) => {
 
     const [name, setName] = useState('')
     const [bucks, setBucks] = useState(0)
@@ -33,7 +34,9 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
         }
         setNinjaList(newList)
         setName('')
-        alert("Ninja successfully added!")
+        // alert("Ninja successfully added!") // change to notiication
+        setNotification(setAlert, "Ninja successfully added!", "green")
+
         logAction(`${value} has been created as a new ninja with ${bucks} ninja bucks!`)
     }
 

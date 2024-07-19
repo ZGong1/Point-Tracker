@@ -38,12 +38,12 @@ function App() {
     const lir = localStorage.getItem("lir")
     if (lir) {
       if (lir !== MMYY()) {
-        var toEdit = {...JSON.parse(storedNinjas)}
+        var toEdit = {...JSON.parse(localStorage.getItem("ninjas"))}
         Object.keys(toEdit).forEach(item => toEdit[item].ice = true)
         setNinjaList(toEdit)
         localStorage.setItem("ninjas", JSON.stringify(toEdit))
         localStorage.setItem("lir", MMYY())
-        alert("Ice cream has been reset for the month")
+        setNotification(setAlert, "Ice cream has been reset for the month!", "green")
       }
     } else {
       localStorage.setItem("lir", MMYY())
@@ -66,6 +66,7 @@ function App() {
           searchString={searchString} 
           authorized={authorized} 
           setAuthorized={setAuthorized}
+          setAlert={setAlert}
         />
         <br/><br/>
 
@@ -92,9 +93,10 @@ function App() {
             <NewNinja 
               ninjaList={ninjaList} 
               setNinjaList={setNinjaList}
+              setAlert={setAlert}
             />
           } />
-          
+
           <Route path="/log" element={<Log />} />
         </Routes>
       </div>

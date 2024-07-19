@@ -10,6 +10,7 @@ animate notification?
 add log to backup file
 better time format for log
 better password input screen
+password to edit
 
 *********************
 replace all alert() with setNotification()
@@ -41,10 +42,11 @@ replace all alert() with setNotification()
 
 
 
-delete button appears when you click edit
-password to edit
 
-DONE:
+
+
+**************  DONE:  *****************
+delete button appears when you click edit
 switch to using the router
 finish implementing logger on all buttons (only edit works right now)
 nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
