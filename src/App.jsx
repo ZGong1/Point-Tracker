@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Ninja from './Ninja'
 import Header from './Header'
 import NewNinja from './NewNinja'
@@ -9,11 +10,6 @@ import sortObjectAlphabetically from './utils/sortObject'
 import setNotification from './utils/notification'
 
 function App() {
-  
-  const [home, setHome] = useState(true)
-  const [newNinja, setNewNinja] = useState(false)
-  const [isLog, setIsLog] = useState(false)
-
   const [ninjaList, setNinjaList] = useState(null)
   const [searchString, setSearchString] = useState('')
   // CHANGE THIS BACK TO FALSE AFTER TESTING
@@ -62,41 +58,45 @@ function App() {
     }
   }, [ninjaList])
 
-  //test return
-
   return (
-    <div>
+    <Router>
+      <div>
+        <Header 
+          setSearchString={setSearchString} 
+          searchString={searchString} 
+          authorized={authorized} 
+          setAuthorized={setAuthorized}
+        />
+        <br/><br/>
 
-      <Header 
-        setHome={setHome} 
-        setNewNinja={setNewNinja} 
-        setIsLog={setIsLog}
-        setSearchString={setSearchString} 
-        searchString={searchString} 
-        authorized={authorized} 
-        setAuthorized={setAuthorized}/><br/><br/>
+        <Notification alert={alert}/>
 
-      <Notification alert={alert}/>
-
-      {home && searchList && searchList.map( (item, idx) => 
-        <Ninja 
-        key={idx} 
-        ninjaList={ninjaList} 
-        setNinjaList={setNinjaList} 
-        name={item[0]} 
-        value={item[1]} 
-        authorized={authorized}
-        setAlert={setAlert}/> )}
-
-      {newNinja && 
-        <NewNinja 
-        ninjaList={ninjaList} 
-        setNinjaList={setNinjaList}/> }
-
-      {isLog && <Log/>}
-
-
-    </div>
+        <Routes>
+          <Route path="/" element={
+            <>
+              {searchList && searchList.map( (item, idx) => 
+                <Ninja 
+                  key={idx} 
+                  ninjaList={ninjaList} 
+                  setNinjaList={setNinjaList} 
+                  name={item[0]} 
+                  value={item[1]} 
+                  authorized={authorized}
+                  setAlert={setAlert}
+                /> 
+              )}
+            </>
+          } />
+          <Route path="/new" element={
+            <NewNinja 
+              ninjaList={ninjaList} 
+              setNinjaList={setNinjaList}
+            />
+          } />
+          <Route path="/log" element={<Log />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
