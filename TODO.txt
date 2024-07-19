@@ -1,21 +1,18 @@
 add actual list of ninjas
 
-clear log button
 authorized check to addninja, and load backup
 restore button https://www.filestack.com/fileschool/react/react-file-upload/
-localStorage password manager for lock button?
+localStorage password manager for lock button (hashing?)
 auto daily backup api flask requests(?)
 make new ninja page look better
 make log page look better
 animate notification?
 add log to backup file
 better time format for log
-better password input screen?
-switch to using the router?
-
-replace all alert() with setNotification()
+better password input screen
 
 *********************
+replace all alert() with setNotification()
 
 
 
@@ -44,21 +41,23 @@ replace all alert() with setNotification()
 
 
 
+delete button appears when you click edit
+password to edit
 
 DONE:
+switch to using the router
 finish implementing logger on all buttons (only edit works right now)
 nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
 check if ninja already exists on creation
 log in local storage
 leveling up changes belt color
-delete button appears when you click edit
 header doesn't stick
-password to edit(?) // global edit button with lock key and prompt password // lock unlock button that reveals 4 buttons in ninja component & save backup & restore backup
+global edit button with lock key and prompt password
 sort alphabetically
-belt color to edit (belt down button in edit mode?)
+added belt down button
 align top and bottom text in header
 buttons show even if not authorized?: level up, belt up, *belt down, ice cream, *edit
-innerLeft color = belt
+innerLeft background = belt
 backup button
 make edit button look like edit button
 level up button

@@ -87,12 +87,14 @@ function App() {
               )}
             </>
           } />
+
           <Route path="/new" element={
             <NewNinja 
               ninjaList={ninjaList} 
               setNinjaList={setNinjaList}
             />
           } />
+          
           <Route path="/log" element={<Log />} />
         </Routes>
       </div>
