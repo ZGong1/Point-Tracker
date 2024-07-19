@@ -1,10 +1,12 @@
 import Ninja from './Ninja'
 import Header from './Header'
 import NewNinja from './NewNinja'
+import Notification from './Notification'
 import Log from './Log'
 import { useState, useEffect } from 'react'
 import MMYY from './utils/util'
 import sortObjectAlphabetically from './utils/sortObject'
+import setNotification from './utils/notification'
 
 function App() {
   
@@ -15,6 +17,7 @@ function App() {
   const [ninjaList, setNinjaList] = useState(null)
   const [searchString, setSearchString] = useState('')
   const [authorized, setAuthorized] = useState(false)
+  const [alert, setAlert] = useState(["message", "green"])
   
   // searches by search string
   var searchList =  ninjaList
@@ -72,6 +75,8 @@ function App() {
         authorized={authorized} 
         setAuthorized={setAuthorized}/><br/><br/>
 
+      <Notification alert={alert}/>
+
       {home && searchList && searchList.map( (item, idx) => 
         <Ninja 
         key={idx} 
@@ -79,7 +84,8 @@ function App() {
         setNinjaList={setNinjaList} 
         name={item[0]} 
         value={item[1]} 
-        authorized={authorized}/> )}
+        authorized={authorized}
+        setAlert={setAlert}/> )}
 
       {newNinja && 
         <NewNinja 
@@ -87,6 +93,8 @@ function App() {
         setNinjaList={setNinjaList}/> }
 
       {isLog && <Log/>}
+
+      <button onClick={() => setNotification(setAlert, "tes4t", "brown")}/>
 
 
     </div>

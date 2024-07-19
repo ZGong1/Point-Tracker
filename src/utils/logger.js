@@ -1,5 +1,4 @@
 const logAction = text => {
-    console.log("logged?")
 
     var toEdit = JSON.parse( localStorage.getItem("log") )
     if (!toEdit) toEdit = []

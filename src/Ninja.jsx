@@ -3,9 +3,10 @@ import imageList from './utils/image'
 import { useState } from 'react'
 import {nextBelt, prevBelt} from './utils/beltUp'
 import logAction from './utils/logger'
+import setNotification from './utils/notification'
 
 
-const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
+const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } ) => {
 
   var imgNum = value.imgNum 
 
@@ -42,13 +43,14 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
     if (!authorized) return alert("Not authorized")
 
     if (ninjaList[name].ice && ninjaList[name].points >= 10) {
-      alert("Ice cream redeemed!")
+      setNotification(setAlert, "Ice cream redeemed!", "green")
       const toEdit = {...ninjaList}
       const newPoints = toEdit[name].points - 10
       toEdit[name] = {...toEdit[name], ice: false, points: newPoints}
       setNinjaList(toEdit)
+      logAction(`${name} got ice cream.`)
     } else {
-      alert("You already got ice cream this month or don't have enough ninja bucks.")
+      setNotification(setAlert, "You already got ice cream this month or don't have enough ninja bucks.", "yellow")
     }
 
   }
@@ -112,7 +114,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized } ) => {
       <div className="outerNinja">
 
           <div className={`innerLeft ${value.belt}`}>
-              <img className='image' src={imageList[imgNum]}/>
+              <img className='image' src={`icons/IconSquare${imgNum}.png`}/>
               <p className='ninjaName'>{name}</p>
           </div>
 

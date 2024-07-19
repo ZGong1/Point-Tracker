@@ -7,10 +7,12 @@ localStorage password manager for lock button?
 auto daily backup api flask requests(?)
 make new ninja page look better
 make log page look better
-finish implementing logger on all buttons (only edit works right now)
+animate notification?
+
+replace all alert() with setNotification()
 
 *********************
-nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
+finish implementing logger on all buttons (only edit works right now)
 
 
 
@@ -41,6 +43,7 @@ nice state based notification (animated?!) https://www.w3schools.com/howto/tryit
 
 
 DONE:
+nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
 check if ninja already exists on creation
 log in local storage
 leveling up changes belt color
