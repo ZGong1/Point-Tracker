@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logAction from "./utils/logger";
 
 const NewNinja = ({ninjaList, setNinjaList}) => {
 
@@ -33,6 +34,7 @@ const NewNinja = ({ninjaList, setNinjaList}) => {
         setNinjaList(newList)
         setName('')
         alert("Ninja successfully added!")
+        logAction(`${value} has been created as a new ninja with ${bucks} ninja bucks!`)
     }
 
     return ( 

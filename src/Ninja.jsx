@@ -48,7 +48,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
       const newPoints = toEdit[name].points - 10
       toEdit[name] = {...toEdit[name], ice: false, points: newPoints}
       setNinjaList(toEdit)
-      logAction(`${name} got ice cream.`)
+      logAction(`${name} got ice cream!`)
     } else {
       setNotification(setAlert, "You already got ice cream this month or don't have enough ninja bucks.", "yellow")
     }
@@ -70,6 +70,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     toEdit[name] = {...toEdit[name], points: newPoints, llu: date}
 
     setNinjaList(toEdit)
+    logAction(`${name} has leveled up!`)
     alert(`${name} has leveled up!`)
   }
 
@@ -90,6 +91,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
 
     setNinjaList(toEdit)
     alert(`${name} has belted up!`)
+    logAction(`${name} has belted up!`)
   }
 
   // belt down button
@@ -99,6 +101,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     toEdit[name] = {...toEdit[name], belt: newBelt}
     setNinjaList(toEdit)
     alert(`${name} has belted down!`)
+    logAction(`${name} has been belted down`)
   }
 
   // deletes ninja
@@ -107,6 +110,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     delete toEdit[name]
     setNinjaList(toEdit)
     alert(`${name} has been deleted.`)
+    logAction(`${name} has been deleted, and had ${value.points} ninja bucks`)
   }
 
 

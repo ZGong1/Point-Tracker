@@ -8,11 +8,14 @@ auto daily backup api flask requests(?)
 make new ninja page look better
 make log page look better
 animate notification?
+add log to backup file
+better time format for log
+better password input screen?
+switch to using the router?
 
 replace all alert() with setNotification()
 
 *********************
-finish implementing logger on all buttons (only edit works right now)
 
 
 
@@ -43,6 +46,7 @@ finish implementing logger on all buttons (only edit works right now)
 
 
 DONE:
+finish implementing logger on all buttons (only edit works right now)
 nice state based notification (animated?!) https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_alerts
 check if ninja already exists on creation
 log in local storage

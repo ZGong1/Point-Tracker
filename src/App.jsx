@@ -16,8 +16,9 @@ function App() {
 
   const [ninjaList, setNinjaList] = useState(null)
   const [searchString, setSearchString] = useState('')
-  const [authorized, setAuthorized] = useState(false)
-  const [alert, setAlert] = useState(["message", "green"])
+  // CHANGE THIS BACK TO FALSE AFTER TESTING
+  const [authorized, setAuthorized] = useState(true)
+  const [alert, setAlert] = useState(null)
   
   // searches by search string
   var searchList =  ninjaList
@@ -93,8 +94,6 @@ function App() {
         setNinjaList={setNinjaList}/> }
 
       {isLog && <Log/>}
-
-      <button onClick={() => setNotification(setAlert, "tes4t", "brown")}/>
 
 
     </div>
