@@ -4,7 +4,9 @@ const Log = ( {} ) => {
 
     return ( 
         <div>
-            {logInfo.map( (item, idx) => <p key={idx}>{item.date}<br/>{item.info}</p>)}
+            {/* gross log info reversal */}
+            {(logInfo.map( (item, idx) => logInfo[logInfo.length - 1 - idx]))
+                     .map( (item, idx) => <p key={idx}>{item.date}<br/>{item.info}</p>)}
         </div>
     );
 }
