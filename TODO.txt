@@ -5,14 +5,12 @@ restore button https://www.filestack.com/fileschool/react/react-file-upload/
 localStorage password manager for lock button (hashing?)
 auto daily backup api flask requests(?)
 make new ninja page look better
-make log page look better
 animate notification?
 add log to backup file
-better time format for log
 confirm popup for deleting ninjas?
 bootstrap for animated notification?
 better password system // save hash to localStorage // change password screen
-reverse order of log
+make log page look betterer
 
 *********************
 
@@ -47,6 +45,8 @@ reverse order of log
 
 
 **************  DONE:  *****************
+reverse order of log
+better time format for log
 replace all alert() with setNotification()
 delete button appears when you click edit
 switch to using the router
