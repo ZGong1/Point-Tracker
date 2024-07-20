@@ -12,9 +12,11 @@ better time format for log
 better password input screen
 password to edit
 always show belt down?
+confirm popup for deleting ninjas?
+bootstrap for animated notification?
+better password system // save hash to localStorage // change password screen
 
 *********************
-replace all alert() with setNotification()
 
 
 
@@ -47,6 +49,7 @@ replace all alert() with setNotification()
 
 
 **************  DONE:  *****************
+replace all alert() with setNotification()
 delete button appears when you click edit
 switch to using the router
 finish implementing logger on all buttons (only edit works right now)

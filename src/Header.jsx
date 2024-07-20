@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import setNotification from './utils/notification';
 
-const Header = ( { setSearchString, searchString, authorized, setAuthorized } ) => {
+const Header = ( { setSearchString, searchString, authorized, setAuthorized, setAlert } ) => {
     // other buttons
     const handleSearch = e => {
         setSearchString(e.target.value)
@@ -16,7 +17,7 @@ const Header = ( { setSearchString, searchString, authorized, setAuthorized } ) 
             if (pwdInput === "Sensei24") {
                 setAuthorized(!authorized)
             } else {
-                alert("WRONG PASSWORD")
+                setNotification(setAlert, "WRONG PASSWORD", "red")
             }
         }
     }

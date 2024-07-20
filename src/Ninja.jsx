@@ -21,7 +21,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
 
   // allows toggling editting point value
   const editNinja = () => {
-    if (!authorized) return alert("Not authorized")
+    if (!authorized) return setNotification(setAlert, "Not authorized", "red")
 
     if (edit) {
       setEdit(false)
@@ -40,7 +40,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
 
   // ice cream button
   const iceCream = () => {
-    if (!authorized) return alert("Not authorized")
+    if (!authorized) return setNotification(setAlert, "Not authorized", "red")
 
     if (ninjaList[name].ice && ninjaList[name].points >= 10) {
       setNotification(setAlert, "Ice cream redeemed!", "green")
@@ -57,7 +57,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
 
   // level up button
   const levelUp = () => {
-    if (!authorized) return alert("Not authorized")
+    if (!authorized) return setNotification(setAlert, "Not authorized", "red")
 
     var date = new Date();
     const mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -71,12 +71,12 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
 
     setNinjaList(toEdit)
     logAction(`${name} has leveled up!`)
-    alert(`${name} has leveled up!`)
+    setNotification(setAlert, `${name} has leveled up!`, "green")
   }
 
   // belt up button
   const beltUp = () => {
-    if (!authorized) return alert("Not authorized")
+    if (!authorized) return setNotification(setAlert, "Not authorized", "red")
 
     var date = new Date();
     const mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -90,8 +90,8 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     toEdit[name] = {...toEdit[name], points: newPoints, llu: date, belt: newBelt}
 
     setNinjaList(toEdit)
-    alert(`${name} has belted up!`)
-    logAction(`${name} has belted up!`)
+    setNotification(setAlert, `${name} has belted up to ${newBelt}!`, "green")
+    logAction(`${name} has belted up to ${newBelt}!`)
   }
 
   // belt down button
@@ -100,8 +100,8 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     const newBelt = prevBelt(ninjaList[name].belt)
     toEdit[name] = {...toEdit[name], belt: newBelt}
     setNinjaList(toEdit)
-    alert(`${name} has belted down!`)
-    logAction(`${name} has been belted down`)
+    setNotification(setAlert, `${name} has belted down to ${newBelt}!`, "red")
+    logAction(`${name} has been belted down to ${newBelt}`)
   }
 
   // deletes ninja
@@ -109,7 +109,7 @@ const Ninja = ( { ninjaList, setNinjaList, name, value, authorized, setAlert } )
     var toEdit = {...ninjaList}
     delete toEdit[name]
     setNinjaList(toEdit)
-    alert(`${name} has been deleted.`)
+    setNotification(setAlert, `${name} has been deleted.`, "red")
     logAction(`${name} has been deleted, and had ${value.points} ninja bucks`)
   }
 

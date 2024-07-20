@@ -20,7 +20,7 @@ const NewNinja = ( { ninjaList, setNinjaList, setAlert } ) => {
     // Creates new ninja
     const onClick = value => {
         // checks if ninja already exists first
-        if (ninjaList[value]) return alert(`${value} is already a ninja!`)
+        if (ninjaList[value]) return setNotification(setAlert, `${value} is already a ninja!`, "yellow")
 
         const date = new Date();
         const mmyyyy = date.toISOString().slice(5, 7) + '/' + date.toISOString().slice(0, 4);
@@ -34,7 +34,6 @@ const NewNinja = ( { ninjaList, setNinjaList, setAlert } ) => {
         }
         setNinjaList(newList)
         setName('')
-        // alert("Ninja successfully added!") // change to notiication
         setNotification(setAlert, "Ninja successfully added!", "green")
 
         logAction(`${value} has been created as a new ninja with ${bucks} ninja bucks!`)
