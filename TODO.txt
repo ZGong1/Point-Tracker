@@ -9,11 +9,12 @@ animate notification?
 add log to backup file
 confirm popup for deleting ninjas?
 bootstrap for animated notification?
-better password system // save hash to localStorage // change password screen
+better password system // save hash to localStorage //
 make log page look betterer
+header buttons aren't same height
 
 *********************
-
+bcrypt for password hashing // util file for hashing, and testing input password
 
 
 
@@ -45,6 +46,7 @@ make log page look betterer
 
 
 **************  DONE:  *****************
+change password screen
 reverse order of log
 better time format for log
 replace all alert() with setNotification()

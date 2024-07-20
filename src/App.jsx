@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import MMYY from './utils/util'
 import sortObjectAlphabetically from './utils/sortObject'
 import setNotification from './utils/notification'
+import Password from './Password';
 
 function App() {
   const [ninjaList, setNinjaList] = useState(null)
@@ -98,6 +99,7 @@ function App() {
           } />
 
           <Route path="/log" element={<Log />} />
+          <Route path="/password" element={<Password authorized={authorized} setAlert={setAlert}/>} />
         </Routes>
       </div>
     </Router>
