@@ -21,9 +21,7 @@ const LoginPage = ( props ) => {
         <div>
             username: <input type="email" value={username} onChange={(e) => setUsername(e.target.value)}/> <br/>
             password: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/> <br/>
-            <button onClick={onLogin}>Login</button>
-            <button onClick={onLogout}>Logout</button>
-            <button onClick={() => addNinja("add by code-erson", 10)}>Add new ninja</button>
+            <button className="ninja-button" onClick={onLogin}>Login</button>
         </div>
     )
 }

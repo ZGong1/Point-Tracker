@@ -1,10 +1,24 @@
 "use server"
+import Ninja from "@/components/Ninja";
 import { getSession, getNinjas } from "@/lib";
 
-const Home = (props) => {
+const Home = async (props) => {
+  const ninjas = await getNinjas()
+  console.log("ninjas: ", ninjas)
+
   return (
     <div>
-      <h1>Hello dashboard!</h1>
+      {ninjas?.map(item => {
+        return <Ninja data={item}/>
+      })}
+    </div>
+  )
+
+  return (
+    <div>
+      {ninjas?.map(item => {
+        return <pre>{JSON.stringify(item, null, 2)}</pre>
+      })}
     </div>
   );
 }

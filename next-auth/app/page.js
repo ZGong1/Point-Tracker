@@ -7,16 +7,14 @@ import { redirect } from "next/navigation";
 
 export default async function Page() {
   const session = await getSession();
-  const ninjas = await getNinjas();
 
   if (session) redirect("/dashboard")
 
   return (
     <div>
       <LoginPage/>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
-      <pre>{JSON.stringify(ninjas, null, 2)}</pre>
-      
+      {/* <pre>{JSON.stringify(session, null, 2)}</pre>
+      <pre>{JSON.stringify(ninjas, null, 2)}</pre> */}
     </div>
   );
 }

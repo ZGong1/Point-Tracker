@@ -8,8 +8,7 @@ const Header = (props) => {
       <div className="left-buttons">
           
       </div>
-      <div className="left-buttons">
-        {/* <form action={logout}><button type="submit">Sign out</button></form> */}
+      <div className="right-buttons">
         <button onClick={() => logout()}>Sign out</button>
       </div>
     </div> 

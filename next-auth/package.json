@@ -15,7 +15,8 @@
     "npm": "^10.8.2",
     "pocketbase": "^0.21.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sweetalert2": "^11.12.3"
   },
   "devDependencies": {
     "postcss": "^8",
