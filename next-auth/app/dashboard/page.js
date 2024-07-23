@@ -9,18 +9,11 @@ const Home = async (props) => {
   return (
     <div>
       {ninjas?.map(item => {
-        return <Ninja data={item}/>
+        return <Ninja key={item.id} data={item}/>
       })}
     </div>
   )
 
-  return (
-    <div>
-      {ninjas?.map(item => {
-        return <pre>{JSON.stringify(item, null, 2)}</pre>
-      })}
-    </div>
-  );
 }
  
 export default Home;
