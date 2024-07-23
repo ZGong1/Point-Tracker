@@ -2,9 +2,11 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import PocketBase from 'pocketbase';
 
 const secretKey = "secret";
 const key = new TextEncoder().encode(secretKey);
+const pb = new PocketBase("http://127.0.0.1:8090")
 
 export async function encrypt(payload) {
   return await new SignJWT(payload)
@@ -21,13 +23,18 @@ export async function decrypt(input) {
   return payload;
 }
 
-export async function login({ username, password }) {
+export async function login( { username, password } ) {
   // Verify credentials && get the user
-  console.log("username/password", username, password)
+  const authData = await pb.collection("users").authWithPassword(username, password)
 
-  const user = { email: username, name: "John" };
-
+  const records = await pb.collection("ninjas").getFullList({
+    sort: '-created',
+  });
+  
+  console.log("records: ", records)
+  
   // Create the session
+  const user = { email: username, name: "John" };
   const expires = new Date(Date.now() + 10 * 1000);
   const session = await encrypt({ user, expires });
 
@@ -44,6 +51,11 @@ export async function getSession() {
   const session = cookies().get("session")?.value;
   if (!session) return null;
   return await decrypt(session);
+}
+
+//TODO
+export async function getNinjas() {
+  return null
 }
 
 export async function updateSession(request) {
