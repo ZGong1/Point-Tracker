@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { login, logout } from "@/lib";
+import { login, logout, addNinja } from "@/lib";
 
 const LoginPage = ( props ) => {
 
@@ -23,6 +23,7 @@ const LoginPage = ( props ) => {
             password: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/> <br/>
             <button onClick={onLogin}>Login</button>
             <button onClick={onLogout}>Logout</button>
+            <button onClick={() => addNinja("add by code-erson", 10)}>Add new ninja</button>
         </div>
     )
 }
