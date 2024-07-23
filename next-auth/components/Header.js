@@ -4,9 +4,8 @@ import Link from 'next/link'
 
 const Header = (props) => {
 
-  const onLogout = () => {
-    logout()
-    console.log("test")
+  const onLogout = async () => {
+    await logout()
   }
 
   return ( 
@@ -15,7 +14,7 @@ const Header = (props) => {
           
       </div>
       <div className="left-buttons">
-        <Link href="/" onClick={onLogout}>Sign out</Link>
+        <Link href="/" onClick={onLogout}><button>Sign out</button></Link>
       </div>
     </div> 
   );

@@ -48,7 +48,7 @@ export async function login( { username, password } ) {
   cookies().set("session", session, { expires, httpOnly: true });
 }
 
-export const logout = () => {
+export const logout = async () => {
   // Destroy the session
   console.log("logout")
   cookies().set("session", "", { expires: new Date(0) });
