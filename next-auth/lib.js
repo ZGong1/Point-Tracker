@@ -52,6 +52,7 @@ export const logout = async () => {
   // Destroy the session
   console.log("logout")
   cookies().set("session", "", { expires: new Date(0) });
+  redirect("/")
 }
 
 export async function getSession() {

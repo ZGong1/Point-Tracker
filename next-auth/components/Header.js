@@ -1,12 +1,8 @@
 "use client"
 import { logout } from "@/lib";
-import Link from 'next/link'
+import { redirect } from "next/navigation";
 
 const Header = (props) => {
-
-  const onLogout = async () => {
-    await logout()
-  }
 
   return ( 
     <div className="header">
@@ -14,7 +10,7 @@ const Header = (props) => {
           
       </div>
       <div className="left-buttons">
-        <Link href="/" onClick={onLogout}><button>Sign out</button></Link>
+        <form action={logout}><button type="submit">Sign out</button></form>
       </div>
     </div> 
   );
