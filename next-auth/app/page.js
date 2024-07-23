@@ -1,14 +1,9 @@
-"use server"
+"use client"
 
-import { getNinjas, getSession } from "@/lib";
 import LoginPage from "@/components/LoginPage"
-import { redirect } from "next/navigation";
 
 
-export default async function Page() {
-  const session = await getSession();
-
-  if (session) redirect("/dashboard")
+export default function Page() {
 
   return (
     <div>

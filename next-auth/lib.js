@@ -46,6 +46,7 @@ export async function login( { username, password } ) {
 
   // Save the session in a cookie
   cookies().set("session", session, { expires, httpOnly: true });
+  redirect("/dashboard")
 }
 
 export const logout = async () => {
@@ -73,7 +74,7 @@ export async function getNinjas() {
   if (!session.user.username) return null;
   
   const records = await pb.collection("ninjas").getFullList({
-    sort: '-created',
+    sort: 'name',
   });
 
   // only show records belonging to the user
