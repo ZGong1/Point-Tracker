@@ -13,16 +13,12 @@ const LoginPage = ( props ) => {
         login({username, password})
     }
 
-    const onLogout = () => {
-        logout()
-    }
-
     return (
-        <div>
-            username: <input type="email" value={username} onChange={(e) => setUsername(e.target.value)}/> <br/>
+        <form action={onLogin}>
+            username: <input value={username} onChange={(e) => setUsername(e.target.value)}/> <br/>
             password: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/> <br/>
-            <button className="ninja-button" onClick={onLogin}>Login</button>
-        </div>
+            <button className="ninja-button" type="submit">Login</button>
+        </form>
     )
 }
 

@@ -1,8 +1,12 @@
 "use server"
 import Ninja from "@/components/Ninja";
 import { getSession, getNinjas } from "@/lib";
+import { redirect } from "next/navigation";
 
 const Home = async (props) => {
+  const session = await getSession()
+  if (!session || !session.user || !session.user.username) redirect("/")
+
   const ninjas = await getNinjas()
   console.log("ninjas: ", ninjas)
 
