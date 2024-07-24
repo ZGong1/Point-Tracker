@@ -8,13 +8,13 @@ import { redirect } from "next/navigation";
 const secretKey = "secret";
 const key = new TextEncoder().encode(secretKey);
 const pb = new PocketBase("http://127.0.0.1:8090")
-const COOKIE_EXPIRE = 1000 * 10 // 1 MINUTE
+const COOKIE_EXPIRE = 1000 * 60 * 60 // 1 HOUR
 
 export async function encrypt(payload) {
   return await new SignJWT(payload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("10 sec from now")
+    .setExpirationTime("3h")
     .sign(key);
 }
 
@@ -112,6 +112,8 @@ export async function updateSession(request) {
 
   // Refresh the session so it doesn't expire
   const parsed = await decrypt(session);
+  if (!parsed) return
+  if (!parsed.expires) return
   parsed.expires = new Date(Date.now() + COOKIE_EXPIRE);
   const res = NextResponse.next();
   res.cookies.set({

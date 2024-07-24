@@ -8,14 +8,15 @@ const Home = async (props) => {
   if (!session || !session.user || !session.user.username) redirect("/")
 
   const ninjas = await getNinjas()
-  console.log("ninjas: ", ninjas)
 
   return (
     <div>
       {ninjas?.map(item => {
         return <Ninja key={item.id} data={item}/>
       })}
+      <pre>{JSON.stringify(session, null, 2)}</pre>
     </div>
+
   )
 
 }
