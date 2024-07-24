@@ -26,6 +26,7 @@
 
 .editButton {
   grid-column-start: 3;
+  aspect-ratio: 1 / 1;
   height: 25%;
   color: white;
   border-radius: 5px;
@@ -33,6 +34,7 @@
   width: 100%;
   margin: 0px;
   font-size: 20px;
+  margin-bottom: 3px;
 }
 
 .ninjaData {
