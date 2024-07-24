@@ -1,7 +1,8 @@
 force first letter capital on new ninja
 new ninja page
 sign up page
-server action return based swal sweetalert2 alerts
+server action return based swal sweetalert2 alerts // handleAlert({'alertString', 'color'})
+replace home with logo
 
 
 ****************************************************
