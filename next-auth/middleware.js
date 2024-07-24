@@ -9,7 +9,7 @@ export async function middleware(request) {
   const session = await getSession(request);
 
   // Check if the request is for the dashboard
-  if (request.nextUrl.pathname === '/dashboard') {
+  if (request.nextUrl.pathname.startsWith('/dashboard')) {
     // If there's no session or no username, redirect to the login page
     if (!session || !session.user || !session.user.username) {
       return NextResponse.redirect(new URL('/', request.url));

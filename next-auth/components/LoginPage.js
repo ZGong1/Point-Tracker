@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { login } from "@/lib";
+import Link from 'next/link';
 
 const LoginPage = (props) => {
   const [username, setUsername] = useState("cstat");
@@ -77,6 +78,12 @@ const LoginPage = (props) => {
               </button>
             </div>
           </form>
+          
+          <div className="mt-6">
+            <Link href="/signup" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+              Create an account
+            </Link>
+          </div>
         </div>
       </div>
     </div>
