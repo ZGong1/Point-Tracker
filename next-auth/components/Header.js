@@ -1,7 +1,7 @@
 "use client"
 import { logout } from "@/lib";
 
-const Header = (props) => {
+const Header = ( { loggedIn } ) => {
 
   return ( 
     <div className="header">
@@ -9,7 +9,7 @@ const Header = (props) => {
           
       </div>
       <div className="right-buttons">
-        <button onClick={() => logout()}>Sign out</button>
+        {loggedIn && <button onClick={() => logout()}>Sign out</button>}
       </div>
     </div> 
   );
