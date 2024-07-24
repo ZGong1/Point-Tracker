@@ -14,9 +14,8 @@ const LoginPage = (props) => {
     startTransition(async () => {
       try {
         await login({ username: formData.get('username'), password: formData.get('password') });
-        // Handle successful login here, e.g., redirect
       } catch (err) {
-        setError("Login failed. Please try again.");
+        setError(err.message || "Login failed. Please try again.");
       }
     });
   };

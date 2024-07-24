@@ -35,7 +35,7 @@ export async function login( { username, password } ) {
     const authData = await pb.collection("users").authWithPassword(username, password)
   } catch (e) {
     if (e.name === "ClientResponseError 0") console.log("PB server isn't responding")
-    if (e.name === "ClientResponseError 400") console.log("Invalid credentials")
+    if (e.name === "ClientResponseError 400") throw new Error("Invalid login credentials")
     return 
   } 
 
