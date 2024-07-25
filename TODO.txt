@@ -1,10 +1,11 @@
 force first letter capital on new ninja
-new ninja page
 server action return based swal sweetalert2 alerts // handleAlert({'alertString', 'color'})
 replace home with logo
 auto redirect to dashboard (from '/' or '/signup') if signed in
 
-
 ****************************************************
+new ninja page
+****************************************************
+
 ninja panel full data
 sign up page
