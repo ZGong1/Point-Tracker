@@ -2,6 +2,7 @@ force first letter capital on new ninja
 server action return based swal sweetalert2 alerts // handleAlert({'alertString', 'color'})
 replace home with logo
 auto redirect to dashboard (from '/' or '/signup') if signed in
+no scrolling on sign in page
 
 ****************************************************
 new ninja page
