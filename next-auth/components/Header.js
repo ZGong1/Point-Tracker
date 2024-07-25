@@ -11,6 +11,7 @@ const Header = ( { loggedIn } ) => {
       </div>
       <div className="right-buttons">
         {loggedIn && <button onClick={() => logout()}>Sign out</button>}
+        {!loggedIn && <Link href="/signup"><button>Sign up</button></Link>}
       </div>
     </div> 
   );

@@ -1,7 +1,9 @@
+import Signup from "@/components/Signup";
+
 const Home = ( props ) => {
   return (
-    <div>
-      Hello signup page
+    <div className="">
+      <Signup/>
     </div>
   );
 }

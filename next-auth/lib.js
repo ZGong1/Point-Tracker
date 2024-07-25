@@ -124,3 +124,27 @@ export async function updateSession(request) {
   });
   return res;
 }
+
+export async function signUp(formData) {
+  try {
+    console.log("hello")
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const passwordConfirm = formData.get('passwordConfirm');
+
+    console.log(email, password, passwordConfirm)
+    
+    const data = {
+      email: email,
+      password: password,
+      passwordConfirm: passwordConfirm,
+    };
+
+    const createdUser = await pb.collection('users').create(data);
+    
+    return createdUser;
+  } catch (error) {
+    console.error('Error during sign-up:', error);
+    throw error;
+  }
+}
